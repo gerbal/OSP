@@ -1,0 +1,144 @@
+/* GREEN */
+
+body { background: #bbe2b6 url(bg-green.png) repeat; }
+
+#outline { border: 1px solid #3E8735; }
+
+#wrapper { background: #fff url(border1.gif) repeat-x 0 260px; border: 15px solid #fff; }
+
+#header { background-color: #bbe2b6; 
+	background: url(261-green.png) no-repeat; 
+	border-bottom: 5px solid #fff;
+	color: #fff; 
+}
+
+#headerBox { border: 1px solid #3E8735; color: black; }
+
+#navTop { background: #3E8735 url(trans1.png) repeat-x 0 0; border-bottom: 5px solid #fff; }
+
+#footer { background: #fff url(border2.gif) repeat-x 0 0; border-top: 1px solid #3E8735; }
+
+#navTop a:hover { background-color: #11250e; color: #fff; }
+#navTop #current a { background-color: #bbe2b6; color: #000; }#navTop li ul { border: 1px solid #576675; background: #E2E6E9;}
+#navTop li.current a { background-color: #e2e6e9; color: #000; }
+#navTop li.today a { color: #ffff00; }
+#navTop li.today-01 a { background-color: #ffff00; }
+#navTop li.today-current a { background-color: #ffff00;  color: #000; }
+#navTop li.basics a:hover { background-color: #4682b4; color: white; }
+#navTop li.basics { background-color: #4682b4; color: white; }
+#navTop li.basics-02 h3 { background-color: #4682b4; color: white; }
+#navTop li.web  a:hover  { background-color: #6b8e23; color: white; }
+#navTop li.web  { background-color: #6b8e23; color: white; }
+#navTop li.markup  a:hover  { background-color: #000fff; color: white; }
+#navTop li.markup  { background-color: #000fff; color: white; }
+#navTop li.spreadsheets  a:hover  { background-color: #006400; color: white; }
+#navTop li.spreadsheets  { background-color: #006400; color: white; }
+#navTop li.databases  { background-color: #800000; color: white; }
+#navTop li.databases  a:hover  { background-color: #800000; color: white; }
+#navTop li.presentations  { background-color: #ffb22b; color: white; }
+#navTop li.presentations  a:hover  { background-color: #ffb22b; color: white; }
+#navTop li ul { border: 1px solid #3E8735; background: #ddf1da;}
+#navTop li ul li a { color: #000; }
+
+#sidebar ul { border-top: 1px solid #3E8735; }
+#sidebar li a:hover { color: #000; background: #ddf1da; }
+#sidebar li a { color: #00488F; border-bottom: 1px solid #3E8735; }
+
+a {	color: #3E8735; 
+	font-weight: bold;
+ }
+
+.border {
+	background-color: #ddf1da;
+	border-top: 2px solid #3E8735;
+	border-bottom: 2px solid #3E8735;
+}
+
+.border-note{
+	background-color: #ffff00;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+
+.border-basics{
+	background-color: #4682b4;
+	color: white;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+
+.border-basics a{
+	color: white;
+}
+
+.border-web{
+	background-color: #6b8e23;
+	color: white;
+	padding: 0 0 0 10px;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+
+.border-web a{
+	color: white;
+}
+
+.border-markup{
+	background-color: #000fff;
+	color: white;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+.border-markup a{
+	color: white;
+}
+
+.border-spreadsheets{
+	background-color: #006400;
+	color: white;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+.border-spreadsheets a{
+	color: white;
+}
+
+.border-databases{
+	background-color: #800000;
+	color: white;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+.border-databases a{
+	color: white;
+}
+
+.border-presentations{
+	background-color: #ffb22b;
+	color: white;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+.border-presentations a{
+	color: white;
+}
+
+.border-value{
+	background-color: #c5ccd3;
+	color: white;
+	border-top: 2px solid #576675;
+	border-bottom: 2px solid #576675;
+}
+.border-value a{
+	color: white;
+}
+
+
+input, textarea { border: 1px solid #3E8735;  }
+input:focus, textarea:focus { background-color: #ddf1da; border: 1px dashed #3E8735; }
+
+.submit { 
+	background: #3E8735 url(trans2.png) repeat-x 0 0;
+	border: 1px solid #3E8735;
+	color: #fff;
+}

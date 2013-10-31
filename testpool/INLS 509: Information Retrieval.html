@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org">
+
+  <title>INLS 509: Information Retrieval</title>
+</head>
+
+<body>
+  <center>
+    <h1>INLS 509:<br>
+    Information Retrieval</h1>
+  </center>
+
+  <table summary="INLS 509" align="center" border="0" cellpadding="10" cellspacing="5" width="900">
+    <tbody><tr valign="top">
+      <td><b>Description:</b></td>
+
+      <td>The field of information retrieval (IR) is concerned with the analysis,
+      organization, storage, and retrieval of unstructured and semi-structured data. In
+      this course, we will focus on mostly text. While IR systems are often associated
+      with Web search engines (e.g., Google), IR applications also include digital
+      library search, patent search, search for local businesses, and expert search, to
+      name a few. Likewise, IR techniques (the underlying technology behind IR systems)
+      are used to solve a wide range of problems, such as organizing documents into an
+      ontology, recommending news stories to users, detecting spam, and predicting
+      reading difficulty. This course will provide an overview of the theory,
+      implementation, and evaluation of IR systems and IR techniques. In particular, we
+      will explore how search engines work, how they "interpret" human language, what
+      different users expect from them, how they are evaluated, why they sometimes fail,
+      and how they might be improved in the future.</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Prerequisites:</b></td>
+
+      <td>There are no prerequisites for this course.</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Expectations:</b></td>
+
+      <td>
+        Information retrieval is the study of <i>computer</i>-based solutions to a
+        <i>human</i> problem. Thus, the first half of the course will be system-focused,
+        while the second half will be user-focused. During the first half, you should
+        expect to see some math (e.g., basic probability and statistics and some linear
+        algebra). However, we will focus on the concepts rather than the details.
+
+        <p>Students will have an opportunity to explore their interests with a open-ended
+        <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/assignments/LiteratureReview.pdf">literature review</a>.</p>
+      </td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Time &amp; Location:</b></td>
+
+      <td>M, W 9:30-10:45 am, Manning 208</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Instructor:</b></td>
+
+      <td>Jaime Arguello (<a href="mailto:jaimearguello@unc.edu">email</a>, <a href="http://www.ils.unc.edu/%7Ejarguello">web</a>)</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Office Hours:</b></td>
+
+      <td>T, Th 9:30-10:30 am, Manning 305</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Required Textbook:</b></td>
+
+      <td><a href="http://search-engines-book.com/">Search Engines - Information Retrieval
+      in Practice</a>, W. B. Croft, D. Metzler, and T. Strohman. Cambridge University
+      Press. 2009. Available at the bookstore.</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Additional Resources:</b></td>
+
+      <td>Foundations of Statistical Natural Language Processing. C. Manning and H
+      Schutze. 1999.<br>
+      <br>
+      Introduction to Information Retrieval. C. Manning, P. Raghavan and H. Schutze.
+      2008.</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Other Readings:</b></td>
+
+      <td>Selected papers and chapters from other books will sometimes be assigned for
+      reading. These will be available online.</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Course Policies:</b></td>
+
+      <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/laptops.html">Laptops</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/attendance.html">Attendance</a>,
+      <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/participation.html">Participation</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/collaboration.html">Collaboration</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/cheating.html">Plagiarism &amp;
+      Cheating</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/late_policy.html">Late Policy</a></td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Grading:</b></td>
+
+      <td>30% homework (10% each)<br>
+      15% midterm exam<br>
+      15% final exam<br>
+      30% <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/assignments/LiteratureReview.pdf">literature review</a> (5% proposal,
+      10% presentation, 15% paper)<br>
+      10% participation</td>
+    </tr>
+
+    <tr valign="top">
+      <td><b>Grade Assignments:</b></td>
+
+      <td>Letter grades will be assigned using the following scale: H 95-100%, P 80-94%,
+      L 60-79%, and F 0-59%. All homework, exams, and the literature review will be
+      graded on a curve.</td>
+    </tr>
+
+    <tr valign="top">
+      <td valign="top"><b>Schedule:</b></td>
+
+      <td>
+        Subject to change! The required textbook (Croft, Metzler, and Strohman) is
+        denoted as CMS below.
+
+        <table summary="INLS 509 Syllabus" align="left" border="2" cellpadding="2">
+          <tbody><tr>
+            <td><b>Lecture</b></td>
+
+            <td width="70"><b>Date</b></td>
+
+            <td width="140"><b>Events</b></td>
+
+            <td><b>Topic</b></td>
+
+            <td width="150"><b>Reading Due</b></td>
+          </tr>
+
+          <tr>
+            <td>1</td>
+
+            <td>Wed. 8/21</td>
+
+            <td>&nbsp;</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/01-Introduction.pdf">Introduction to IR: The Big Picture</a></td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+
+            <td>Mon. 8/26</td>
+
+            <td>&nbsp;</td>
+
+            <td>Course Overview: Roadmap and Expectations</td>
+
+            <td>CMS Ch. 1</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+
+            <td>Wed. 8/28</td>
+
+            <td>&nbsp;</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/02-IntroductionToAdhocRetrieval.pdf">Introduction To Ad-hoc Retrieval I</a></td>
+
+            <td>CMS Ch. 2, 5.3.0-5.3.3, 7.1.0-7.1.1</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+
+            <td>Mon. 9/2</td>
+
+            <td>Labor Day (No Class)</td>
+
+            <td>No class</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+
+            <td>Wed. 9/4</td>
+
+            <td>&nbsp;</td>
+
+            <td>Introduction To Ad-hoc Retrieval II</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+
+            <td>Mon. 9/9</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/assignments/hw1.pdf">HW1 Out</a></td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/03-IndexingandQueryProcessing.pdf">Indexing and Query Processing</a><a></a></td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+
+            <td>Wed. 9/11</td>
+
+            <td>&nbsp;</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/04-StatisticalPropertiesofText.pdf">Statistical Properties of Text</a></td>
+
+            <td>CMS Ch. 4.1-4.2</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+
+            <td>Mon. 9/16</td>
+
+            <td>&nbsp;</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/05-TextRepresentation.pdf">Text Representation I</a></td>
+
+            <td>CMS Ch. 4.3-4.7</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+
+            <td>Wed. 9/18</td>
+
+            <td>&nbsp;</td>
+
+            <td>Text Representation II</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+
+            <td>Mon. 9/23</td>
+
+            <td>HW1 Due, <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/assignments/hw2.pdf">HW2 Out</a></td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/06-VectorSpaceModel.pdf">Retrieval Models: Vector Space I</a></td>
+
+            <td>CMS Ch. 7.1</td>
+          </tr>
+
+          <tr>
+            <td>11</td>
+
+            <td>Wed. 9/25</td>
+
+            <td>&nbsp;</td>
+
+            <td>Retrieval Models: Vector Space II</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+
+            <td>Mon. 9/30</td>
+
+            <td>Literature Review Proposal Due</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/07-QueryLikelihoodModel.pdf">Retrieval Models: Query-likelihood I</a></td>
+
+            <td>CMS Ch. 7.3</td>
+          </tr>
+
+          <tr>
+            <td>13</td>
+
+            <td>Wed. 10/2</td>
+
+            <td>&nbsp;</td>
+
+            <td>Retrieval Models: Query-likelihood II</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>14</td>
+
+            <td>Mon. 10/7</td>
+
+            <td>HW2 Due</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/08-Priors.pdf">Document Priors</a></td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>15</td>
+
+            <td>Wed. 10/9</td>
+
+            <td>&nbsp;</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/lectures/09-Evaluation.pdf">Evaluation Overview</a></td>
+
+            <td>CMS Ch. 8</td>
+          </tr>
+
+          <tr>
+            <td>16</td>
+
+            <td>Mon. 10/14</td>
+
+            <td>Midterm Review</td>
+
+            <td>Midterm Review</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>17</td>
+
+            <td>Wed. 10/16</td>
+
+            <td>Midterm Exam</td>
+
+            <td>Midterm Exam</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>18</td>
+
+            <td>Mon. 10/21</td>
+
+            <td>&nbsp;</td>
+
+            <td>Test Collection-based Evaluation</td>
+
+            <td><a href="http://jis.sagepub.com/content/early/2008/06/13/0165551507086989.full.pdf">Robertson
+            '08</a></td>
+          </tr>
+
+          <tr>
+            <td>19</td>
+
+            <td>Wed. 10/23</td>
+
+            <td>&nbsp;</td>
+
+            <td>Test Collection-based Evaluation</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>20</td>
+
+            <td>Mon. 10/28</td>
+
+            <td>No Class</td>
+
+            <td>No Class</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>21</td>
+
+            <td>Wed. 10/30</td>
+
+            <td>No Class</td>
+
+            <td>No Class</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>22</td>
+
+            <td>Mon. 11/4</td>
+
+            <td>HW 3 Out</td>
+
+            <td>Evaluation Metrics</td>
+
+            <td><a href="http://dl.acm.org/citation.cfm?id=345539">Hersh et al., '00</a>,
+            <a href="http://dl.acm.org/citation.cfm?id=383992">Turpin &amp; Hersh
+            '01</a>, CMS Ch. 8.4</td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+
+            <td>Wed. 11/6</td>
+
+            <td>&nbsp;</td>
+
+            <td>Experimentation</td>
+
+            <td><a href="http://ciir-publications.cs.umass.edu/getpdf.php?id=744">Smucker
+            et al., '07</a>, <a href="http://en.wikipedia.org/wiki/Cross-validation_%28statistics%29">Cross-Validation</a>,
+            <a href="http://hunch.net/?p=22">Parameter Tunning and Overfitting</a></td>
+          </tr>
+
+          <tr>
+            <td>24</td>
+
+            <td>Mon. 11/11</td>
+
+            <td>&nbsp;</td>
+
+            <td>Relevance</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/papers/Saracevic07Part3.pdf">Saracevic '07</a></td>
+          </tr>
+
+          <tr>
+            <td>25</td>
+
+            <td>Wed. 11/13</td>
+
+            <td>&nbsp;</td>
+
+            <td>User Studies in Information Retrieval</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/papers/FnTIR-Press-Kelly.pdf">Kelly '09</a> Chapter 10 (pgs.
+            99-125), <a href="http://ils.unc.edu/courses/2013_fall/inls509_001/papers/Tombros05.pdf">Tombros et al., '05</a></td>
+          </tr>
+
+          <tr>
+            <td>26</td>
+
+            <td>Mon. 11/18</td>
+
+            <td>HW3 Due</td>
+
+            <td>Search-log Analysis</td>
+
+            <td><a href="http://ils.unc.edu/courses/2013_fall/inls509_001/papers/Joachims05.pdf">Joachims et al., '05</a></td>
+          </tr>
+
+          <tr>
+            <td>27</td>
+
+            <td>Wed. 11/20</td>
+
+            <td>&nbsp;</td>
+
+            <td>Aggregated Search</td>
+
+            <td><a href="http://ils.unc.edu/%7Ejarguell/ArguelloSIGIR09.pdf">Arguello et
+            al., 2009</a></td>
+          </tr>
+
+          <tr>
+            <td>28</td>
+
+            <td>Mon. 11/25</td>
+
+            <td>&nbsp;</td>
+
+            <td>Student Presentations</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>29</td>
+
+            <td>Wed. 11/27</td>
+
+            <td>Thanksgiving (No Class)</td>
+
+            <td>No Class</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>30</td>
+
+            <td>Mon. 12/2</td>
+
+            <td>&nbsp;</td>
+
+            <td>Student Presentations</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>31</td>
+
+            <td>Wed. 12/4</td>
+
+            <td>&nbsp;</td>
+
+            <td>Student Presentations</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>32</td>
+
+            <td>Fri. 12/6</td>
+
+            <td>&nbsp;</td>
+
+            <td>Student Presentations</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>31</td>
+
+            <td>Mon. 12/9</td>
+
+            <td>Final Exam Review, Manning 208, 9:30-10:45am</td>
+
+            <td>Final Exam Review (attendance optional)</td>
+
+            <td>&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td>33</td>
+
+            <td>Tue. 12/10</td>
+
+            <td>Final Exam, Manning 208, 4-7pm</td>
+
+            <td>Final Exam</td>
+
+            <td></td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+
+
+</body></html>

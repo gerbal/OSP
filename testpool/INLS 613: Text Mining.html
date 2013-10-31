@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org">
+
+  <title>INLS 613: Text Mining</title>
+</head>
+
+<body>
+  <center>
+    <h1>INLS 613: Text Mining</h1>
+
+    <table border="0" cellpadding="5" cellspacing="5" width="1000">
+      <tbody><tr valign="top">
+        <td><b>Objective:</b></td>
+
+        <td>Gain experience with both the theoretical and practical aspects of text
+        mining. Learn how to build and evaluate computer programs that generate new
+        knowledge from natural language text.</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Description:</b></td>
+
+        <td>
+          Changes in technology and publishing practices have eased the task of recording
+          and sharing textual information electronically. This increased quantity of
+          information has spurred the development of a new field called text mining. The
+          overarching goal of this new field is to use computers to automatically learn
+          new things from textual data.
+
+          <p>The course is divided into three modules: basics, principles, and
+          applications (see details below). The third part of the course will focus on
+          several applications of text mining: methods for automatically organizing
+          textual documents for sense-making and navigation (clustering and
+          classification), methods for detecting opinion and bias, methods for detecting
+          and resolving specific entities in text (information extraction and
+          resolution), and methods for learning new relations between entities (relation
+          extraction). Throughout the course, a strong emphasis will be placed on
+          evaluation. Students will develop a deep understanding of one particular method
+          through a <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/project_description.pdf">course project</a>.</p>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Prerequisites:</b></td>
+
+        <td>Students should have a reasonable background in programming in a structured
+        or object oriented programming language, such as Java or C++. "Reasonable" means
+        either coursework or equivalent practical experience. You should be able to
+        design, implement, debug and test small to medium sized programs. If you would
+        like to take this course, but do not know if you meet these pre-requisites,
+        please send me an <a href="mailto:jarguell@email.unc.edu">email</a>.</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Time &amp; Location:</b></td>
+
+        <td>M,W 2:00-3:15 pm, Hamilton 452</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Instructor:</b></td>
+
+        <td>Jaime Arguello (<a href="mailto:jaimearguello@unc.edu">email</a>, <a href="http://www.ils.unc.edu/%7Ejarguello">web</a>)</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Office Hours:</b></td>
+
+        <td>T, Th 9:30-10:30am, Manning 305</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Required Textbook:</b></td>
+
+        <td><a href="http://www.cs.waikato.ac.nz/ml/weka/book.html">Data Mining:
+        Practical Machine Learning Tools and Techniques (Third Edition)</a> Ian H.
+        Witten, Eibe Frank, and Mark A. Hall. 2011. Morgan Kaufman. ISBN
+        978-0-12-374856-0. Available <a href="http://www.amazon.com/exec/obidos/ASIN/0123748569/departmofcompute">online</a>
+        or in the campus bookstore.</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Additional Resources:</b></td>
+
+        <td>TBD</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Course Policies:</b></td>
+
+        <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/laptops.html">Laptops</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/attendance.html">Attendance</a>,
+        <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/participation.html">Participation</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/collaboration.html">Collaboration</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/cheating.html">Plagiarism &amp;
+        Cheating</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/late_policy.html">Late Policy</a></td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Grading:</b></td>
+
+        <td>10% Class participation<br>
+        20% Midterm Exam<br>
+        30% Homework (10% each)<br>
+        40% <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/project_description.pdf">Final project</a> (5% project proposal,
+        25% project report, 10% project presentation)</td>
+      </tr>
+
+      <tr valign="top">
+        <td><b>Grade Assignments:</b></td>
+
+        <td>Letter grades will be assigned using the following scale: H 95-100%, P
+        80-94%, L 60-79%, and F 0-59%.</td>
+      </tr>
+
+      <tr valign="top">
+        <td valign="top"><b>Topics:</b></td>
+
+        <td>
+          Subject to change! Readings from the required textbook (Witten, Frank, and
+          Hall) is marked with a WFH bellow.
+
+          <table class="tableizer-table" border="2">
+            <tbody><tr class="tableizer-firstrow">
+              <th>Lecture</th>
+
+              <th width="100">Date</th>
+
+              <th width="150">Events</th>
+
+              <th width="300">Topic</th>
+
+              <th width="250">Reading Due</th>
+            </tr>
+
+            <tr>
+              <td>1</td>
+
+              <td>Wed. 8/21</td>
+
+              <td>&nbsp;</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/01-TextMiningOverview.pdf">Introduction to Text
+              Mining: The Big Picture</a></td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+
+              <td>Mon. 8/26</td>
+
+              <td>&nbsp;</td>
+
+              <td>Course Overview: Roadmap and Expectations</td>
+
+              <td>WFH Ch. 1, <a href="http://www.cs.cmu.edu/%7Etom/pubs/MachineLearning.pdf">Mitchell '06</a>,
+              <a href="http://dl.acm.org/citation.cfm?id=1034678.1034679">Hearst
+              '99</a></td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+
+              <td>Wed. 8/28</td>
+
+              <td>&nbsp;</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/02-IntroToPredictiveAnalysis.pdf">Predictive
+              Analysis: Concepts, Features, and Instances I</a></td>
+
+              <td>WFH Ch. 2</td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+
+              <td>Mon. 9/2</td>
+
+              <td>Labor Day (No Class)</td>
+
+              <td>No class</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+
+              <td>Wed. 9/4</td>
+
+              <td>&nbsp;</td>
+
+              <td>Predictive Analysis: Concepts, Features, and Instances II</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+
+              <td>Mon. 9/9</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/hw1.pdf">HW1 Out</a></td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/03-TextRepresentation.pdf">Text Representation
+              I</a></td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>7</td>
+
+              <td>Wed. 9/11</td>
+
+              <td>&nbsp;</td>
+
+              <td>Text Representation II</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>8</td>
+
+              <td>Mon. 9/16</td>
+
+              <td>&nbsp;</td>
+
+              <td>Text Representation III</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>9</td>
+
+              <td>Wed. 9/18</td>
+
+              <td>&nbsp;</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/04-NaiveBayesClassification.pdf">Machine Learning Algorithms: Naïve Bayes</a></td>
+
+              <td>WFH Ch. 4.2, <a href="http://www.cs.cmu.edu/%7Etom/mlbook/NBayesLogReg.pdf">Mitchell Sections 1
+              and 2</a></td>
+            </tr>
+
+            <tr>
+              <td>10</td>
+
+              <td>Mon. 9/23</td>
+
+              <td>HW1 Due, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/hw2.pdf">HW2 Out</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/train.csv">train.csv</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/test.csv">test.csv</a></td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/LightSIDE.zip">LighSIDE Tutorial</a></td>
+
+              <td><a href="http://www.cs.cmu.edu/%7Eemayfiel/LightSIDE.pdf">LightSIDE
+              User's Manual</a></td>
+            </tr>
+
+            <tr>
+              <td>11</td>
+
+              <td>Wed. 9/25</td>
+
+              <td>&nbsp;</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/05-InstanceBasedClassification.pdf">Machine Learning Algorithms: Instance-based Classification</a></td>
+
+              <td>WFH Ch. 4.7</td>
+
+
+            </tr>
+
+            <tr>
+              <td>12</td>
+
+              <td>Mon. 9/30</td>
+
+              <td>Project Proposal Due</td>
+
+              <td><a href="http://www.cs.waikato.ac.nz/ml/weka/">Weka Tutorial</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/movie_mpaa_ratings.arff">movie ratings</a>, <a href="http://ils.unc.edu/courses/2013_fall/inls613_001/electronics_reviews.arff">electronics reviews</a></td>
+
+              <td>WFH Ch. 10 and 11</td>
+            </tr>
+
+            <tr>
+              <td>13</td>
+
+              <td>Wed. 10/2</td>
+
+              <td>&nbsp;</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/06-Evaluation.pdf">Predictive Analysis: Experimentation and Evaluation I</a></td>
+
+              <td>WFH Ch. 5</td>
+            </tr>
+
+            <tr>
+              <td>14</td>
+
+              <td>Mon. 10/7</td>
+
+              <td>HW2 Due</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/07-CrossValidationAndStatSig.pdf">Predictive Analysis: Experimentation and Evaluation II</a></td>
+
+              <td><a href="http://ciir-publications.cs.umass.edu/getpdf.php?id=744">Smucker et al.,
+              '07</a>, <a href="http://en.wikipedia.org/wiki/Cross-validation_%28statistics%29">Cross-Validation</a>,
+              <a href="http://hunch.net/?p=22">Parameter Tunning and Overfitting</a></td>
+            </tr>
+
+            <tr>
+              <td>15</td>
+
+              <td>Wed. 10/9</td>
+
+              <td>&nbsp;</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/lectures/08-Clustering.pdf">Exploratory Analysis: Clustering II</a></td>
+
+		<td><a href="http://nlp.stanford.edu/IR-book/pdf/16flat.pdf">Manning Ch.
+              16</a></td>
+            </tr>
+
+            <tr>
+              <td>16</td>
+
+              <td>Mon. 10/14</td>
+
+              <td>&nbsp;</td>
+
+              <td>Midterm Review</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>17</td>
+
+              <td>Wed. 10/16</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/INLS_613.midterm.Fall2013.pdf">Midterm</a></td>
+
+              <td>Midterm</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>18</td>
+
+              <td>Mon. 10/21</td>
+
+              <td>&nbsp;</td>
+
+              <td>Exploratory Analysis: Clustering II</td>
+
+		<td><a href="http://nlp.stanford.edu/IR-book/pdf/16flat.pdf">Manning Ch.
+              16</a></td>
+
+            </tr>
+
+            <tr>
+              <td>19</td>
+
+              <td>Wed. 10/23</td>
+
+              <td><a href="http://ils.unc.edu/courses/2013_fall/inls613_001/hw/hw3.pdf">HW3 Out</a></td>
+
+              <td>Sentiment Analysis I</td>
+
+              <td><a href="http://www.cs.cornell.edu/home/llee/omsa/omsa.pdf">Pang and
+              Lee, '08</a> (skip Section 5 and only skim Section 6), <a href="http://dl.acm.org/citation.cfm?id=1118704">Pang and Lee, '02</a></td>
+            </tr>
+
+            <tr>
+              <td>20</td>
+
+              <td>Mon. 10/28</td>
+
+              <td>No Class</td>
+
+              <td>No Class</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>21</td>
+
+              <td>Wed. 10/30</td>
+
+              <td>No Class</td>
+
+              <td>No Class</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>22</td>
+
+              <td>Mon. 11/4</td>
+
+              <td>&nbsp;</td>
+
+              <td>Sentiment Analysis II</td>
+
+              <td><a href="http://dl.acm.org/citation.cfm?id=1860645">Somasundaran and
+              Weibe '10</a> (optional), <a href="http://journal.webscience.org/435/1/50_paper.pdf"></a></td>
+            </tr>
+
+            <tr>
+              <td>23</td>
+
+              <td>Wed. 11/6</td>
+
+              <td>HW3 Due</td>
+
+              <td>Detecting Viewpoint and Persepective</td>
+
+              <td><a href="http://dl.acm.org/citation.cfm?id=1866719">Yano et al.,
+              '10</a>, <a href="http://dl.acm.org/citation.cfm?id=1860645">Weibe
+              '10</a></td>
+            </tr>
+
+            <tr>
+              <td>24</td>
+
+              <td>Mon. 11/11</td>
+
+              <td>&nbsp;</td>
+
+              <td>Text-based Forecasting</td>
+
+              <td><a href="http://www.cs.cmu.edu/%7Enasmith/papers/oconnor+balasubramanyan+routledge+smith.icwsm10.pdf">
+              O'connor et al., '10</a>, <a href="http://dl.acm.org/citation.cfm?id=1599141">Lerman et al., '08</a></td>
+            </tr>
+
+            <tr>
+              <td>25</td>
+
+              <td>Wed. 11/13</td>
+
+              <td>&nbsp;</td>
+
+              <td>Information Extraction and Relation Learning</td>
+
+              <td><a href="http://dl.acm.org/citation.cfm?id=1105679">McCallum
+              '05</a></td>
+            </tr>
+
+            <tr>
+              <td>26</td>
+
+              <td>Mon. 11/18</td>
+
+              <td>&nbsp;</td>
+
+              <td>Temporal Summarization</td>
+
+              <td><a href="http://dl.acm.org/citation.cfm?id=2458233">Guo '13</a></td>
+            </tr>
+
+            <tr>
+              <td>27</td>
+
+              <td>Wed. 11/20</td>
+
+              <td>&nbsp;</td>
+
+              <td>Student Presentations</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>28</td>
+
+              <td>Mon. 11/25</td>
+
+              <td>&nbsp;</td>
+
+              <td>Student Presentations</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>29</td>
+
+              <td>Wed. 11/27</td>
+
+              <td>Thanksgiving (No Class)</td>
+
+              <td>No Class</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>30</td>
+
+              <td>Mon. 12/2</td>
+
+              <td>&nbsp;</td>
+
+              <td>Student Presentations</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>31</td>
+
+              <td>Wed. 12/4</td>
+
+              <td>&nbsp;</td>
+
+              <td>Student Presentations</td>
+
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>32</td>
+
+              <td>Tue. 12/10</td>
+
+              <td>Project Report Due</td>
+
+              <td>&nbsp;</td>
+
+              <td></td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+  </center>
+
+
+</body></html>
