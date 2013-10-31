@@ -77,6 +77,9 @@ def FindNamesLoc(names, doc):
 
 
 def CleanText(text):
+    '''
+    cleans a string to alphanum and spaces
+    '''
     newtext = text.lower()
     newtext = re.sub('[\W_]+', ' ', newtext)
     #print newtext
