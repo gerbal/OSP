@@ -1,6 +1,8 @@
 import magic
 import PyPDF2
 from collections import defaultdict
+import string
+import re
 
 # class semester:
 # 	def __init__(self, doc,uuid,mongo):
@@ -24,7 +26,9 @@ def ParseFile(doc):
     if mimetype == "application/postscript":
         return ParsePS(doc)
     if mimetype == "text/html":
-        return FindSemester(doc)
+        semester =  FindSemester(doc)
+        year = FindYear(semester,doc)
+
     else:
         print mimetype
         raise Exception("Unknown Filetype")
@@ -51,19 +55,30 @@ def FindSemester(doc):
         'interim', 'intersession', 'j-term', 'inter-term', 'may term', 'may-term']
     nameLocations = FindNamesLoc(semesterNames, doc)
     print nameLocations
+    #if 
 
 
 def FindNamesLoc(names, doc):
     '''
     returns a dictionary of all the locations of words in names list in doc
     '''
-    namesIndex = defaultdict(list)
-    for pos, term in enumerate(doc.split()):
-        if term in names:
-            namesIndex[term].append(pos)
-    return namesIndex
+    locations = dict()
+    for word in names:
+        locations[word] = [doc.find(word)]
+        while locations[word][-1] >=0 and doc.find(word, int(locations[word][-1])) >=0:
+            locations[word] += [doc.find(word,locations[word][-1]+1)]
+    return locations
+    # namesIndex = defaultdict(list)
+    # doc.split()
+    # for pos, term in enumerate(doc.split()):
+    #     if term in names:
+    #         namesIndex[term].append(pos)
+    # return namesIndex
 
 
 def CleanText(text):
-    newText = text.lower()
-    return newText
+    newtext = text.lower()
+    newtext = re.sub('[\W_]+', ' ', newtext)
+    #print newtext
+    newtext = newtext.strip(string.punctuation)
+    return newtext
