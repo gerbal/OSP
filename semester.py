@@ -1,6 +1,6 @@
 import magic
 import PyPDF2
-from collections import defaultdict
+#from collections import defaultdict
 import string
 import re
 
@@ -54,7 +54,7 @@ def FindSemester(doc):
         'fall', 'spring', 'summer', 'winter', 'maymester', 'mini-mester',
         'interim', 'intersession', 'j-term', 'inter-term', 'may term', 'may-term']
     nameLocations = FindNamesLoc(semesterNames, doc)
-    print nameLocations
+    print FindYearNearSemester(nameLocations, doc)
     #if 
 
 
@@ -85,3 +85,18 @@ def CleanText(text):
     #print newtext
     newtext = newtext.strip(string.punctuation)
     return newtext
+
+def FindYearNearSemester(locations, doc):
+    possibleSemester = str()
+    re1='((?:(?:[1]{1}\\d{1}\\d{1}\\d{1})|(?:[2]{1}\\d{3})))(?![\\d])'  # Year 1
+    rg = re.compile(re1,re.IGNORECASE|re.DOTALL)
+    for i in locations:
+        print "i:"+ i 
+        for n in locations[i]:
+            print "n:" + str(n)
+            if n != -1:
+                l = re.findall(rg,doc[n-200:n+200])
+                print l
+                for m in l:
+                    possibleSemester += i +" " + m
+    return possibleSemester
