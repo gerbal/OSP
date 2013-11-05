@@ -1,4 +1,8 @@
 import semester
+import glob
+import os
 
-file = open("INLS690_30.pdf","rb")
-semester.ParseFile(file)
+for i in glob.glob(os.getcwd() + "/testpool/*.odt"):
+	file = open( i,"rb")
+	print i
+	semester.ParseFile(file)
