@@ -7,19 +7,15 @@ import nltk
 import odt2txt
 
 
-
-
-
-
 def ParseFile(doc):
     '''
     Determines filetype of doc, passes to Parse_filetype_()
     '''
     mimetype = magic.from_buffer(doc.read(1024), mime=True)
-    #print mimetype
+    # print mimetype
     if mimetype == "application/vnd.oasis.opendocument.text":
         text = ParseODT(doc)
-    elif mimetype == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" or mimetype == 'application/msword' or mimetype=='application/zip':
+    elif mimetype == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" or mimetype == 'application/msword' or mimetype == 'application/zip':
         text = ParseDOCX(doc)
     elif mimetype == "application/pdf":
         text = ParsePDF(doc)
@@ -33,8 +29,9 @@ def ParseFile(doc):
         raise Exception("Unknown Filetype")
 
     betterText = CleanText(text)
-    semester =  FindSemester(betterText)
+    semester = FindSemester(betterText)
     print semester
+
 
 def ParsePDF(doc):
     '''
@@ -46,6 +43,7 @@ def ParsePDF(doc):
         text += page.extractText()
     return text
 
+
 def ParseDOCX(doc):
     document = opendocx(doc)
     paratextlist = getdocumenttext(document)
@@ -56,6 +54,7 @@ def ParseDOCX(doc):
     html = html.join(newparatextlist)
     return ParseHTML(html, True)
 
+
 def ParseHTML(doc, isString=False):
     if isString:
         text = nltk.clean_html(doc)
@@ -63,18 +62,22 @@ def ParseHTML(doc, isString=False):
         text = nltk.clean_html(doc.read())
     return text
 
+
 def ParseODT(doc):
     odt = odt2txt.OpenDocumentTextFile(doc)
     unicode = odt.toString()
     out_utf8 = unicode.encode("utf-8")
     return out_utf8
 
+
 def ParsePS(doc):
     text = str()
     for line in doc:
-        for p in line.replace('\\(','EscapeLP').replace('\\)','EscapeRP').split('(')[1:]:
-            text += p[:p.find(')')].replace('EscapeLP','(').replace('EscapeRP',')')
+        for p in line.replace('\\(', 'EscapeLP').replace('\\)', 'EscapeRP').split('(')[1:]:
+            text += p[:p.find(')')].replace(
+                'EscapeLP', '(').replace('EscapeRP', ')')
     return text
+
 
 def FindSemester(doc):
     '''
@@ -85,7 +88,7 @@ def FindSemester(doc):
         'interim', 'intersession', 'j-term', 'inter-term', 'may term', 'may-term']
     nameLocations = FindNamesLoc(semesterNames, doc)
     return FindYearNearSemester(nameLocations, doc)
-    #if 
+    # if
 
 
 def FindNamesLoc(names, doc):
@@ -95,8 +98,8 @@ def FindNamesLoc(names, doc):
     locations = dict()
     for word in names:
         locations[word] = [doc.find(word)]
-        while locations[word][-1] >=0 and doc.find(word, int(locations[word][-1])) >=0:
-            locations[word] += [doc.find(word,locations[word][-1]+1)]
+        while locations[word][-1] >= 0 and doc.find(word, int(locations[word][-1])) >= 0:
+            locations[word] += [doc.find(word, locations[word][-1] + 1)]
     return locations
     # namesIndex = defaultdict(list)
     # doc.split()
@@ -112,21 +115,22 @@ def CleanText(text):
     '''
     newtext = text.lower()
     newtext = re.sub('[\W_]+', ' ', newtext)
-    #print newtext
+    # print newtext
     newtext = newtext.strip(string.punctuation)
     return newtext
 
+
 def FindYearNearSemester(locations, doc):
     possibleSemester = str()
-    re1='(\d{4})'  # Year 1
-    rg = re.compile(re1,re.IGNORECASE|re.DOTALL)
+    re1 = '(\d{4})'  # Year 1
+    rg = re.compile(re1, re.IGNORECASE | re.DOTALL)
     for i in locations:
-        #print "i:"+ i 
+        # print "i:"+ i
         for n in locations[i]:
-            #print "n:" + str(n)
+            # print "n:" + str(n)
             if n != -1:
-                l = re.findall(rg,doc[n-200:n+200])
-                #print l
+                l = re.findall(rg, doc[n - 200:n + 200])
+                # print l
                 for m in l:
-                    possibleSemester += i +" " + m
+                    possibleSemester += i + " " + m
     return possibleSemester
